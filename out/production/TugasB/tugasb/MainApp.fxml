@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../asset/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tugasb.MainAppController">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="714.0" prefWidth="269.0" stylesheets="@../asset/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="176.0" prefWidth="269.0" styleClass="sidebar" stylesheets="@../asset/style.css">
+               <children>
+                  <ImageView fitHeight="97.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/asshurt2.png" />
+                     </image></ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="549.0" prefWidth="269.0" styleClass="sidebar" stylesheets="@../asset/style.css">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="487.0" prefWidth="278.0" spacing="50.0">
+                     <children>
+                        <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeWidth="4.0" />
+                        <GridPane alignment="CENTER" prefHeight="212.0" prefWidth="269.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="Home_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchForm" prefHeight="58.0" prefWidth="239.0" styleClass="transparent" text="Home" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="Mobil_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="239.0" styleClass="transparent" text="Data Mobil" textFill="#f8f8f8" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="Transaksi_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchForm" prefHeight="55.0" prefWidth="239.0" styleClass="transparent" text="Transaksi" textFill="#f8f8f8" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></Button>
+                           </children>
+                           <padding>
+                              <Insets left="15.0" right="15.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="1000.0" />
+                     </opaqueInsets>
+                  </VBox>
+               </children></HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="720.0" prefWidth="955.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="home_form" prefHeight="720.0" prefWidth="1011.0">
+               <children>
+                  <AnchorPane layoutX="23.0" layoutY="12.0" prefHeight="219.0" prefWidth="966.0" stylesheets="@../asset/style.css">
+                     <effect>
+                        <Shadow />
+                     </effect>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <AnchorPane layoutX="36.0" layoutY="20.0" prefHeight="180.0" prefWidth="430.0" styleClass="menu" stylesheets="@../asset/style.css">
+                           <children>
+                              <Label layoutX="125.0" layoutY="121.0" prefHeight="37.0" prefWidth="169.0" text="Jumlah Mobil" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <ImageView layoutX="135.0" layoutY="20.0">
+                                 <Image url="@../asset/sedan.png" />
+                              </ImageView>
+                              <Label fx:id="totalMobilLabel" alignment="CENTER_RIGHT" layoutX="312.0" layoutY="10.0" prefHeight="37.0" prefWidth="60.0" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                        <AnchorPane layoutX="500.0" layoutY="20.0" prefHeight="180.0" prefWidth="430.0" styleClass="menu">
+                           <children>
+                              <Label fx:id="totalTransaksiLabel" alignment="CENTER_RIGHT" layoutX="338.0" layoutY="15.0" prefHeight="37.0" prefWidth="60.0" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <ImageView layoutX="175.0" layoutY="40.0">
+                                 <Image url="@../asset/invoice.png" />
+                              </ImageView>
+                              <Label layoutX="116.0" layoutY="118.0" prefHeight="37.0" prefWidth="189.0" text="Total Transaksi" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="mobil_form" prefHeight="720.0" prefWidth="1011.0" visible="false">
+               <children>
+                  <AnchorPane layoutX="20.0" layoutY="238.0" prefHeight="466.0" prefWidth="966.0" stylesheets="@../asset/style.css">
+                     <effect>
+                        <Shadow />
+                     </effect>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <TableView fx:id="table" layoutX="21.0" layoutY="52.0" onMouseClicked="#tableCarSelect" prefHeight="406.0" prefWidth="930.0">
+                          <columns>
+                            <TableColumn fx:id="mobilCol" prefWidth="337.0" text="Mobil" />
+                            <TableColumn fx:id="hargaCol" prefWidth="331.0" text="Harga(Hari)" />
+                              <TableColumn fx:id="statusCol" prefWidth="261.0" text="Status" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="21.0" layoutY="15.0" prefHeight="27.0" prefWidth="103.0" text="Data Mobil">
+                           <font>
+                              <Font name="Tahoma Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="797.0" layoutY="15.0" mnemonicParsing="false" onAction="#exportMobilTXT" prefHeight="18.0" prefWidth="72.0" styleClass="add-btn" stylesheets="@../asset/style.css" text="Export" />
+                        <Button layoutX="879.0" layoutY="14.0" mnemonicParsing="false" onAction="#importMobilTXT" prefHeight="27.0" prefWidth="72.0" styleClass="add-btn" stylesheets="@../asset/style.css" text="Import" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="22.0" layoutY="22.0" prefHeight="200.0" prefWidth="464.0" stylesheets="@../asset/style.css">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <effect>
+                        <Shadow />
+                     </effect>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label layoutX="27.0" layoutY="55.0" prefHeight="19.0" prefWidth="97.0" text="Nama Mobil :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="198.0" layoutY="14.0" prefHeight="27.0" prefWidth="187.0" text="Tambah Data Mobil">
+                           <font>
+                              <Font name="Tahoma Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addMobil" layoutX="125.0" layoutY="52.0" prefHeight="25.0" prefWidth="223.0" />
+                        <TextField fx:id="addHarga" layoutX="125.0" layoutY="86.0" prefHeight="25.0" prefWidth="221.0" promptText="Rp" />
+                        <Label layoutX="21.0" layoutY="89.0" prefHeight="19.0" prefWidth="95.0" text="Harga (Hari) :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="addStatus" layoutX="124.0" layoutY="119.0" prefHeight="25.0" prefWidth="221.0" promptText="Pilih" />
+                        <Label layoutX="62.0" layoutY="122.0" prefHeight="19.0" prefWidth="53.0" text="Status :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="125.0" layoutY="156.0" mnemonicParsing="false" onAction="#tambahDataMobil" prefHeight="32.0" prefWidth="80.0" styleClass="add-btn" stylesheets="@../asset/style.css" text="Tambah" />
+                        <Button layoutX="279.0" layoutY="156.0" mnemonicParsing="false" onAction="#clearInputTambahMobil" prefHeight="33.0" prefWidth="66.0" styleClass="clear-btn" stylesheets="@../asset/style.css" text="Reset" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="506.0" layoutY="22.0" prefHeight="200.0" prefWidth="481.0" stylesheets="@../asset/style.css">
+                     <children>
+                        <Label layoutX="27.0" layoutY="55.0" prefHeight="19.0" prefWidth="97.0" text="Nama Mobil :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="198.0" layoutY="14.0" prefHeight="27.0" prefWidth="187.0" text="Edit Data Mobil">
+                           <font>
+                              <Font name="Tahoma Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="21.0" layoutY="89.0" prefHeight="19.0" prefWidth="95.0" text="Harga (Hari) :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="62.0" layoutY="122.0" prefHeight="19.0" prefWidth="53.0" text="Status :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="125.0" layoutY="153.0" mnemonicParsing="false" onAction="#updateDataMobil" prefHeight="33.0" prefWidth="73.0" styleClass="update-btn" stylesheets="@../asset/style.css" text="Update" />
+                        <Button layoutX="385.0" layoutY="153.0" mnemonicParsing="false" onAction="#hapusMobil" prefHeight="33.0" prefWidth="66.0" styleClass="delete-btn" stylesheets="@../asset/style.css" text="Hapus" />
+                        <Button layoutX="279.0" layoutY="153.0" mnemonicParsing="false" onAction="#clearInputUpdateMobil" prefHeight="33.0" prefWidth="66.0" styleClass="clear-btn" stylesheets="@../asset/style.css" text="Reset" />
+                        <ComboBox fx:id="updateStatus" layoutX="124.0" layoutY="120.0" prefHeight="25.0" prefWidth="221.0" promptText="Pilih" />
+                        <TextField fx:id="updateHarga" layoutX="125.0" layoutY="87.0" prefHeight="25.0" prefWidth="221.0" promptText="Rp" />
+                        <TextField fx:id="updateMobil" layoutX="125.0" layoutY="53.0" prefHeight="25.0" prefWidth="223.0" />
+                     </children>
+                     <effect>
+                        <Shadow />
+                     </effect>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="transaksi_form" prefHeight="720.0" prefWidth="1010.0" visible="false">
+               <children>
+                  <AnchorPane layoutX="20.0" layoutY="238.0" prefHeight="466.0" prefWidth="966.0" stylesheets="@../asset/style.css">
+                     <children>
+                        <TableView fx:id="transaksiTable" layoutX="21.0" layoutY="52.0" prefHeight="406.0" prefWidth="930.0">
+                           <columns>
+                              <TableColumn fx:id="namaCol" prefWidth="157.0" text="Nama Penyewa" />
+                              <TableColumn fx:id="mobilTransaksiCol" prefWidth="127.0" text="Mobil" />
+                              <TableColumn fx:id="jumlahHariCol" prefWidth="159.0" text="Hari" />
+                              <TableColumn fx:id="genderCol" minWidth="0.0" prefWidth="182.0" text="Gender" />
+                              <TableColumn fx:id="totalCol" minWidth="0.0" prefWidth="168.0" text="Total" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="21.0" layoutY="15.0" prefHeight="27.0" prefWidth="147.0" text="Data Transaksi">
+                           <font>
+                              <Font name="Tahoma Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="797.0" layoutY="15.0" mnemonicParsing="false" onAction="#exportTransaksiTXT" prefHeight="18.0" prefWidth="72.0" styleClass="add-btn" stylesheets="@../asset/style.css" text="Export" />
+                        <Button layoutX="879.0" layoutY="14.0" mnemonicParsing="false" onAction="#importTransaksiTXT" prefHeight="27.0" prefWidth="72.0" styleClass="add-btn" stylesheets="@../asset/style.css" text="Import" />
+                     </children>
+                     <effect>
+                        <Shadow />
+                     </effect>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="20.0" layoutY="27.0" prefHeight="195.0" prefWidth="967.0" stylesheets="@../asset/style.css">
+                     <children>
+                        <Label alignment="BOTTOM_RIGHT" layoutX="134.0" layoutY="66.0" prefHeight="19.0" prefWidth="50.0" text="Mobil :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="380.0" layoutY="14.0" prefHeight="27.0" prefWidth="187.0" text="Tambah Transaksi">
+                           <font>
+                              <Font name="Tahoma Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="inputHari" layoutX="514.0" layoutY="63.0" prefHeight="25.0" prefWidth="216.0" />
+                        <Label layoutX="442.0" layoutY="69.0" prefHeight="19.0" prefWidth="38.0" text="Hari :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="340.0" layoutY="155.0" mnemonicParsing="false" onAction="#hitungTotalHarga" prefHeight="40.0" prefWidth="80.0" styleClass="add-btn" stylesheets="@../asset/style.css" text="Tambah" />
+                        <Button layoutX="515.0" layoutY="155.0" mnemonicParsing="false" onAction="#clearInputTransaksi" prefHeight="40.0" prefWidth="80.0" styleClass="clear-btn" stylesheets="@../asset/style.css" text="Reset" />
+                        <ComboBox fx:id="pilihMobil" layoutX="197.0" layoutY="63.0" prefHeight="25.0" prefWidth="215.0" promptText="Pilih" />
+                        <TextField fx:id="namaPenyewa" layoutX="195.0" layoutY="99.0" prefHeight="25.0" prefWidth="217.0" />
+                        <Label alignment="BOTTOM_RIGHT" layoutX="66.0" layoutY="102.0" prefHeight="19.0" prefWidth="116.0" text="Nama Penyewa :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BOTTOM_RIGHT" layoutX="719.0" layoutY="160.0" prefHeight="19.0" prefWidth="56.0" text="Total :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="788.0" layoutY="155.0" prefHeight="29.0" prefWidth="25.0" text="Rp">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="442.0" layoutY="102.0" prefHeight="19.0" prefWidth="59.0" text="Gender :">
+                           <font>
+                              <Font name="Tahoma" size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="inputGender" layoutX="515.0" layoutY="99.0" prefHeight="25.0" prefWidth="215.0" promptText="Pilih" />
+                        <Label fx:id="totalHargaLabel" layoutX="821.0" layoutY="155.0" prefHeight="29.0" prefWidth="125.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <Shadow />
+                     </effect>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
